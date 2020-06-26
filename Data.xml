@@ -2,10 +2,10 @@
 <LoginTable>
   <Users>
     <UserName>Ajay</UserName>
-    <Password>ajay@123</Password>
+    <Password>abc@123</Password>
   </Users>
   <Users>
     <UserName>Heena</UserName>
-    <Password>heena@123</Password>
+    <Password>abc@123</Password>
   </Users>
 </LoginTable>
