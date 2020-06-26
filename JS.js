@@ -4,7 +4,8 @@
 $(document).ready(function () {
 
     $('#ajaxBtn').click(function () {
-        checkUserNameAvail();
+        //checkUserNameAvail();
+        readXml("http://localhost:13911/Data.xml")
     });
 
     
@@ -27,4 +28,33 @@ $(document).ready(function () {
             }
         });
     }
+
+    function readXml(xmlFile)
+    {
+        alert("XML Reading");
+        debugger;
+        $(document).ready(function ()
+        {
+            $("#dvContent").append("<ul></ul>");
+            $.ajax({
+                type: "GET",
+                url: "Data.xml",
+                dataType: "xml",
+                success: function (xml)
+                {
+                    $(xml).find('Book').each(function ()
+                    {
+                        var sTitle = $(this).find('Title').text();
+                        var sPublisher = $(this).find('Publisher').text();
+                        alert(sTitle);
+                    });
+                },
+                error: function () {
+                    alert("An error occurred while processing XML file.");
+                }
+            });
+        });
+    }
+
+
 });
